@@ -43,13 +43,14 @@ return function (Layer, tictactoe, ref)
 
   tictactoe [meta] [interaction.gui] = function (parameters)
     assert (type (parameters) == "table")
-    local renderer = {}
+    local Et         = require "etlua"
+    local renderer   = {}
     renderer.editor  = assert (parameters.editor)
     renderer.module  = assert (parameters.module)
     renderer.target  = assert (parameters.target)
     renderer.edited  = renderer.editor:require (renderer.module)
     renderer.running = true
-    renderer.target.innerHTML = [[
+    renderer.target.innerHTML = Et.render ([[
       <div class="container-fluid">
         <div class="row">
           <div class="col-sm-12">
@@ -65,7 +66,7 @@ return function (Layer, tictactoe, ref)
           </div>
         </div>
       </div>
-    ]]
+    ]])
     function renderer.close ()
       renderer.running = false
       renderer.target.innerHTML = nil
