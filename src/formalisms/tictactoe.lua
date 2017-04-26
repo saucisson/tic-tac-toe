@@ -34,8 +34,8 @@ return function (Layer, tictactoe, ref)
     }
   }
 
-  for row in 1, 3 do
-    for column in 1, 3 do
+  for row = 1, 3 do
+    for column = 1, 3 do
       local key = tostring (row) .. "-" .. tostring (column)
       tictactoe [key] = tictactoe [meta].tokens._
     end
