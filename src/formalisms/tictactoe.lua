@@ -8,9 +8,9 @@ return function (Layer, tictactoe, ref)
 
   local meta        = Layer.key.meta
   local refines     = Layer.key.refines
-  local collection  = Layer.require "ardoises/formalisms/data.collection"
-  local enumeration = Layer.require "ardoises/formalisms/data.enumeration"
-  local interaction = Layer.require "ardoises/formalisms/interaction"
+  local collection  = Layer.require "data.collection@ardoises/formalisms:dev"
+  local enumeration = Layer.require "data.enumeration@ardoises/formalisms:dev"
+  local interaction = Layer.require "interaction@ardoises/formalisms:dev"
 
   tictactoe [refines] = {
     collection,
